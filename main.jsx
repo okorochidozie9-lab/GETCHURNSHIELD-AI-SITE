@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './Getchurnshieldlanding.JSX'
+import GetChurnShieldLanding from './Getchurnshieldlanding.JSX'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <GetChurnShieldLanding />
   </React.StrictMode>,
 )
