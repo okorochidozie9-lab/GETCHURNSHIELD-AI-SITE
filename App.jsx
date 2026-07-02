@@ -60,7 +60,7 @@ const STEPS = [
     label: "Step 01",
     title: "24/7 Intent Capture",
     body:
-      "The engine continuously monitors your Instagram and Facebook posts, instantly scraping high-intent buyers the exact split-second they comment on an ad or listing.",
+      "The engine continuously monitors Instagram and Facebook posts, instantly scraping high-intent buyers the exact split-second they comment on an ad or listing.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="w-7 h-7">
         <circle cx="12" cy="12" r="9" />
@@ -282,14 +282,14 @@ export default function GetChurnShieldLanding() {
             BUILT FOR NIGERIAN REAL ESTATE AGENCIES
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.08] mb-7">
-            Turn Your Social Media Comments Into{" "}
+            Turn Social Media Comments Into{" "}
             <span className="text-emerald-600">Qualified Property Buyers</span>
-            —On Autopilot.
+            On Autopilot.
           </h1>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
             Built exclusively for Nigerian real estate agencies and property
             developers. GetChurnShield AI automatically extracts high-intent
-            buyer leads from your Instagram and Facebook comments, launches an
+            buyer leads from Instagram twitter and Facebook comments, launches an
             instant value-first qualification sequence on WhatsApp, and alerts
             your team the exact second a hot client is ready to book a
             physical site inspection.
