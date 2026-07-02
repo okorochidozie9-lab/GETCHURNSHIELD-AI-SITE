@@ -319,16 +319,12 @@ export default function GetChurnShieldLanding() {
       <section className="relative bg-gray-50/80 border-y border-gray-200/70">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 py-20 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
-            You are burning multi-million Naira commissions to slow response
+            Your sales team is wasting too much time doing manual work instead of closing deals.
+                </h2>
             times.
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            You spend massive budgets on cinematic property video production
-            and ad spend. Prospects leave comments saying "Price?",
-            "Location?", "Is this estate available?"—and then they sit there.
-            By the time your sales team manually replies hours later, the
-            lead has already scrolled past, forgotten the property, or moved
-            on to a competitor. Traditional follow-up is costing you sales.
+            Real estate growth stops completely when your agents spend the whole day searching for clients online, copy-pasting price details, chasing people up and down on WhatsApp, and trying to filter serious buyers one by one. This manual hustle doesn't scale. It is too slow, mistakes will happen, and your team will easily forget to follow up on hot leads—which means multi-million Naira commissions are slipping away.GetChurnShield AI takes over this stressful, boring work by actively scanning online spaces to find, chat with, and qualify serious buyers on autopilot. Your team stops wasting time looking for who wants to buy and starts focusing only on closing clients who are ready to pay. Plus, everything is neatly organized in a clean dashboard so you can see exactly how your business is growing in real time.
           </p>
         </div>
       </section>
