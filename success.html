@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - GetChurnShield AI</title>
+    <meta name="description" content="Your setup session has been secured. Welcome to the elite real estate automation platform.">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <svg viewBox="0 0 32 32" class="logo-icon">
+                    <rect width="32" height="32" rx="8" />
+                    <path d="M9 20.5L14 11L18 17L23 9" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    <circle cx="23" cy="9" r="2" fill="white" />
+                </svg>
+                <span>GetChurnShield <span class="logo-highlight">AI</span></span>
+            </a>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">System Status: Fully Operational</span>
+                </div>
+                <a href="pricing.html" class="btn btn-primary">Secure Setup Session</a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="hamburger" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="how-it-works.html" class="mobile-nav-link">How It Works</a>
+        <a href="features.html" class="mobile-nav-link">Features</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing & Plans</a>
+        <div class="system-status" style="margin-top: 1rem; width: fit-content;">
+            <span class="status-dot"></span>
+            <span class="status-text">System Status: Fully Operational</span>
+        </div>
+        <a href="pricing.html" class="btn btn-primary btn-block" style="margin-top: 2rem;">Secure Setup Session</a>
+    </div>
+
+    <!-- Success Confirmation -->
+    <section class="container" style="display: flow-root;">
+        <div class="success-card observe-animation">
+            <div class="success-icon-wrap">
+                <!-- Checkmark SVG -->
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-dasharray="50" stroke-dashoffset="50">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            </div>
+            
+            <h1 class="success-title">Setup Session Secured!</h1>
+            <p class="success-subtitle text-slate-600">Congratulations! Your payment has been processed successfully. We've reserved your onboarding slot and will reach out shortly to integrate your listings.</p>
+            
+            <!-- Receipt Box -->
+            <div class="success-details">
+                <h3 class="card-title" style="margin-bottom: 1rem; font-size: 1.15rem; color: #fff;">Transaction Details</h3>
+                
+                <div class="success-details-row">
+                    <span class="summary-label">Transaction Reference</span>
+                    <span class="summary-value" id="refVal">-</span>
+                </div>
+                <div class="success-details-row">
+                    <span class="summary-label">Plan Selected</span>
+                    <span class="summary-value" id="planVal">-</span>
+                </div>
+                <div class="success-details-row">
+                    <span class="summary-label">Agency / Brokerage</span>
+                    <span class="summary-value" id="agencyVal">-</span>
+                </div>
+                <div class="success-details-row">
+                    <span class="summary-label">Billing Contact</span>
+                    <span class="summary-value" id="emailVal">-</span>
+                </div>
+                <div class="success-details-row">
+                    <span class="summary-label">Amount Billed</span>
+                    <span class="summary-value" id="amountVal" style="color:#10b981; font-weight: 700;">-</span>
+                </div>
+            </div>
+            
+            <div class="form-group-row">
+                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                    Book Onboarding Calendar
+                </a>
+                <a href="index.html" class="btn btn-secondary btn-large">
+                    Back to Homepage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href="index.html" class="footer-logo">
+                <svg viewBox="0 0 32 32" class="footer-logo-icon">
+                    <rect width="32" height="32" rx="8" />
+                    <path d="M9 20.5L14 11L18 17L23 9" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    <circle cx="23" cy="9" r="2" fill="white" />
+                </svg>
+                <span>GetChurnShield <span class="logo-highlight">AI</span></span>
+            </a>
+            <span class="footer-text">© 2026 GetChurnShield AI. Built for Elite Real Estate Operators. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Parse checkout values from URL query string
+            const urlParams = new URLSearchParams(window.location.search);
+            const ref = urlParams.get("ref") || "GCS-TESTREF";
+            const plan = urlParams.get("plan") || "pro";
+            const agency = urlParams.get("agency") || "Elite Properties";
+            const email = urlParams.get("email") || "sales@agency.com";
+            const name = urlParams.get("name") || "Subscriber";
+            const amount = urlParams.get("amount") || "₦300,000";
+
+            // Map plan identifier to readable text
+            const planNames = {
+                growth: "Growth Plan - Setup & Scrape",
+                pro: "Pro Plan - Multi-Channel Scale",
+                ultimate: "Ultimate Plan - Omnichannel Enterprise"
+            };
+
+            const resolvedPlanName = planNames[plan.toLowerCase()] || "Pro Plan - Multi-Channel Scale";
+
+            // Populate UI receipt details
+            document.getElementById("refVal").textContent = ref;
+            document.getElementById("planVal").textContent = resolvedPlanName;
+            document.getElementById("agencyVal").textContent = agency;
+            document.getElementById("emailVal").textContent = `${name} (${email})`;
+            document.getElementById("amountVal").textContent = amount;
+        });
+    </script>
+</body>
+</html>

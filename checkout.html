@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Secure Setup Session</title>
+    <meta name="description" content="Secure your GetChurnShield AI setup session. Complete your payment securely via Paystack.">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Paystack Inline SDK -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <svg viewBox="0 0 32 32" class="logo-icon">
+                    <rect width="32" height="32" rx="8" />
+                    <path d="M9 20.5L14 11L18 17L23 9" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    <circle cx="23" cy="9" r="2" fill="white" />
+                </svg>
+                <span>GetChurnShield <span class="logo-highlight">AI</span></span>
+            </a>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">System Status: Fully Operational</span>
+                </div>
+                <a href="pricing.html" class="btn btn-primary">Secure Setup Session</a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="hamburger" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="how-it-works.html" class="mobile-nav-link">How It Works</a>
+        <a href="features.html" class="mobile-nav-link">Features</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing & Plans</a>
+        <div class="system-status" style="margin-top: 1rem; width: fit-content;">
+            <span class="status-dot"></span>
+            <span class="status-text">System Status: Fully Operational</span>
+        </div>
+        <a href="pricing.html" class="btn btn-primary btn-block" style="margin-top: 2rem;">Secure Setup Session</a>
+    </div>
+
+    <!-- Checkout Section -->
+    <section class="section">
+        <div class="container">
+            <div class="checkout-wrap">
+                <!-- Checkout Form -->
+                <div class="checkout-card observe-animation">
+                    <h1 class="form-title">Secure Your Setup Session</h1>
+                    <p class="form-subtitle text-slate-600">Enter your details below to initialize your secure setup call. Payments are processed securely via Paystack.</p>
+                    
+                    <form id="paymentForm">
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" id="fullName" class="form-control" placeholder="Chidi Okoro" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress" class="form-label">Email Address</label>
+                                <input type="email" id="emailAddress" class="form-control" placeholder="chidi@agency.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
+                                <input type="tel" id="whatsappNumber" class="form-control" placeholder="+234 803 123 4567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agencyName" class="form-label">Agency / Company Name</label>
+                                <input type="text" id="agencyName" class="form-control" placeholder="Elite Properties Ltd" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <button type="submit" id="payBtn" class="btn btn-primary btn-block btn-large">
+                                Initialize Checkout Session
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary Column -->
+                <div class="order-summary observe-animation delay-150">
+                    <h2 class="summary-title">Selected Setup Session</h2>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Plan Name</span>
+                        <span class="summary-value" id="summaryPlanName">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Billing Cycle</span>
+                        <span class="summary-value">Monthly Recurring</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Setup Timeframe</span>
+                        <span class="summary-value">Immediate (Within 24hrs)</span>
+                    </div>
+                    
+                    <div class="summary-row total">
+                        <span class="summary-label">Total Due</span>
+                        <span class="summary-value price" id="summaryPlanPrice">-</span>
+                    </div>
+                    
+                    <div class="summary-features-header">Included in this plan</div>
+                    <ul class="summary-features-list" id="summaryPlanFeatures">
+                        <!-- Populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href="index.html" class="footer-logo">
+                <svg viewBox="0 0 32 32" class="footer-logo-icon">
+                    <rect width="32" height="32" rx="8" />
+                    <path d="M9 20.5L14 11L18 17L23 9" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    <circle cx="23" cy="9" r="2" fill="white" />
+                </svg>
+                <span>GetChurnShield <span class="logo-highlight">AI</span></span>
+            </a>
+            <span class="footer-text">© 2026 GetChurnShield AI. Built for Elite Real Estate Operators. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Config & Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Plans Data Definition
+        const PLANS = {
+            growth: {
+                id: "growth",
+                name: "Growth Plan",
+                price: 150000,
+                priceFormatted: "₦150,000",
+                features: [
+                    "1 Instagram Source Channel",
+                    "Up to 300 qualified leads/mo",
+                    "WhatsApp outreach & alerts",
+                    "Custom listing & location setup",
+                    "100% human-like automated chat"
+                ]
+            },
+            pro: {
+                id: "pro",
+                name: "Pro Plan",
+                price: 300000,
+                priceFormatted: "₦300,000",
+                features: [
+                    "2 Channels (Instagram & Facebook)",
+                    "Up to 1,000 qualified leads/mo",
+                    "WhatsApp + Email Fallback",
+                    "Objection handling, setup & links",
+                    "Takeover links for closing team"
+                ]
+            },
+            ultimate: {
+                id: "ultimate",
+                name: "Ultimate Plan",
+                price: 500000,
+                priceFormatted: "₦500,000",
+                features: [
+                    "Omnichannel (Instagram, FB & Twitter/X)",
+                    "Up to 2,500 qualified leads/mo",
+                    "AI Voice Engine (1000 mins/mo)",
+                    "Developer webhooks & CRM sync",
+                    "Custom persona training & tone"
+                ]
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Get Plan Parameter from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const planParam = urlParams.get("plan") || "pro"; // Default to Pro
+            
+            // Resolve plan or fallback to pro
+            const selectedPlan = PLANS[planParam.toLowerCase()] || PLANS.pro;
+
+            // 2. Populate Order Summary Card
+            document.getElementById("summaryPlanName").textContent = selectedPlan.name;
+            document.getElementById("summaryPlanPrice").textContent = selectedPlan.priceFormatted;
+            
+            const featuresList = document.getElementById("summaryPlanFeatures");
+            featuresList.innerHTML = ""; // Clear existing
+            selectedPlan.features.forEach(feat => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" style="width:16px; height:16px; color:#10b981; flex-shrink:0;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>${feat}</span>
+                `;
+                featuresList.appendChild(li);
+            });
+
+            // 3. Handle Paystack Payment Initialization on Form Submit
+            const paymentForm = document.getElementById("paymentForm");
+            const payBtn = document.getElementById("payBtn");
+
+            paymentForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                // Retrieve form values
+                const fullName = document.getElementById("fullName").value.trim();
+                const email = document.getElementById("emailAddress").value.trim();
+                const whatsapp = document.getElementById("whatsappNumber").value.trim();
+                const agency = document.getElementById("agencyName").value.trim();
+
+                // Show spinner loading state in button
+                payBtn.disabled = true;
+                payBtn.innerHTML = `
+                    <div class="spinner" style="width: 20px; height: 20px; border-width: 2.5px;"></div>
+                    Initializing Gateway...
+                `;
+
+                // Calculate price in kobo (Paystack requirement: value * 100)
+                const amountInKobo = selectedPlan.price * 100;
+
+                // Configure Paystack Inline pop-up
+                const handler = PaystackPop.setup({
+                    key: CONFIG.PAYSTACK_PUBLIC_KEY,
+                    email: email,
+                    amount: amountInKobo,
+                    currency: "NGN",
+                    ref: "GCS-" + Math.floor((Math.random() * 1000000000) + 1), // Unique local reference prefix
+                    metadata: {
+                        custom_fields: [
+                            {
+                                display_name: "Customer Name",
+                                variable_name: "customer_name",
+                                value: fullName
+                            },
+                            {
+                                display_name: "WhatsApp Number",
+                                variable_name: "whatsapp_number",
+                                value: whatsapp
+                            },
+                            {
+                                display_name: "Agency Name",
+                                variable_name: "agency_name",
+                                value: agency
+                            },
+                            {
+                                display_name: "Plan Selected",
+                                variable_name: "plan_selected",
+                                value: selectedPlan.name
+                            }
+                        ]
+                    },
+                    callback: function(response) {
+                        // Payment was successful! Redirect to success page
+                        const successUrl = `success.html?ref=${response.reference}&plan=${selectedPlan.id}&email=${encodeURIComponent(email)}&agency=${encodeURIComponent(agency)}&name=${encodeURIComponent(fullName)}&amount=${encodeURIComponent(selectedPlan.priceFormatted)}`;
+                        window.location.href = successUrl;
+                    },
+                    onClose: function() {
+                        // Reset button state
+                        payBtn.disabled = false;
+                        payBtn.textContent = "Initialize Checkout Session";
+                        alert("Transaction cancelled. You can retry when ready.");
+                    }
+                });
+
+                // Open Paystack popup
+                handler.openIframe();
+            });
+        });
+    </script>
+</body>
+</html>
